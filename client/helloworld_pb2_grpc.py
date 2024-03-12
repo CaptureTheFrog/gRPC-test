@@ -16,20 +16,10 @@ class GreeterStub(object):
             channel: A grpc.Channel.
         """
         self.SayHello = channel.unary_unary(
-                '/helloworld.Greeter/SayHello',
-                request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
-                response_deserializer=helloworld__pb2.HelloReply.FromString,
-                _registered_method=True)
-        self.SayHelloStreamReply = channel.unary_stream(
-                '/helloworld.Greeter/SayHelloStreamReply',
-                request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
-                response_deserializer=helloworld__pb2.HelloReply.FromString,
-                _registered_method=True)
-        self.SayHelloBidiStream = channel.stream_stream(
-                '/helloworld.Greeter/SayHelloBidiStream',
-                request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
-                response_deserializer=helloworld__pb2.HelloReply.FromString,
-                _registered_method=True)
+                        '/helloworld.Greeter/SayHello',
+                        request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
+                        response_deserializer=helloworld__pb2.HelloReply.FromString,
+                        )
 
 
 class GreeterServicer(object):
